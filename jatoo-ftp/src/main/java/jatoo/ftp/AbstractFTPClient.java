@@ -31,7 +31,7 @@ import java.io.OutputStream;
 public abstract class AbstractFTPClient implements FTPClient {
 
   @Override
-  public final void connect(String host, int port, String username, String password) throws FTPClientException {
+  public final void connect(final String host, final int port, final String username, final String password) throws FTPClientException {
 
     if (isConnected()) {
       disconnect();
@@ -43,7 +43,7 @@ public abstract class AbstractFTPClient implements FTPClient {
   protected abstract void connectImpl(String host, int port, String username, String password) throws FTPClientException;
 
   @Override
-  public final void connect(FTPClientConnectionInfoProvider connectionInfoProvider) throws FTPClientException {
+  public final void connect(final FTPClientConnectionInfoProvider connectionInfoProvider) throws FTPClientException {
 
     final FTPClientConnectionInfo connectionInfo = connectionInfoProvider.getConnectionInfo();
 
@@ -51,42 +51,42 @@ public abstract class AbstractFTPClient implements FTPClient {
   }
 
   @Override
-  public void upload(File srcFile, String dstFile) throws FTPClientException {
+  public final void upload(final File srcFile, final String dstFile) throws FTPClientException {
     upload(srcFile.getAbsolutePath(), dstFile, MODE.OVERWRITE);
   }
 
   @Override
-  public void upload(File srcFile, String dstFile, MODE mode) throws FTPClientException {
+  public final void upload(final File srcFile, final String dstFile, final MODE mode) throws FTPClientException {
     upload(srcFile.getAbsolutePath(), dstFile, mode);
   }
 
   @Override
-  public void upload(String srcFile, String dstFile) throws FTPClientException {
+  public final void upload(final String srcFile, final String dstFile) throws FTPClientException {
     upload(srcFile, dstFile, MODE.OVERWRITE);
   }
 
   @Override
-  public void upload(InputStream srcStream, String dstFile) throws FTPClientException {
+  public final void upload(final InputStream srcStream, final String dstFile) throws FTPClientException {
     upload(srcStream, dstFile, MODE.OVERWRITE);
   }
 
   @Override
-  public void download(String srcFile, File dstFile) throws FTPClientException {
+  public final void download(final String srcFile, final File dstFile) throws FTPClientException {
     download(srcFile, dstFile.getAbsolutePath(), MODE.OVERWRITE);
   }
 
   @Override
-  public void download(String srcFile, File dstFile, MODE mode) throws FTPClientException {
+  public final void download(final String srcFile, final File dstFile, final MODE mode) throws FTPClientException {
     download(srcFile, dstFile.getAbsolutePath(), mode);
   }
 
   @Override
-  public void download(String srcFile, String dstFile) throws FTPClientException {
+  public final void download(final String srcFile, final String dstFile) throws FTPClientException {
     download(srcFile, dstFile, MODE.OVERWRITE);
   }
 
   @Override
-  public void download(String srcFile, OutputStream dstStream) throws FTPClientException {
+  public final void download(final String srcFile, final OutputStream dstStream) throws FTPClientException {
     download(srcFile, dstStream, MODE.OVERWRITE);
   }
 

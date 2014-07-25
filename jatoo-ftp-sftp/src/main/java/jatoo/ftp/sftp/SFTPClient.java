@@ -47,7 +47,7 @@ public class SFTPClient extends AbstractFTPClient {
   private ChannelSftp sftp;
 
   @Override
-  protected void connectImpl(String host, int port, String username, String password) throws FTPClientException {
+  protected final void connectImpl(final String host, final int port, final String username, final String password) throws FTPClientException {
 
     JSch jsch = new JSch();
 
@@ -81,12 +81,12 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public boolean isConnected() {
+  public final boolean isConnected() {
     return sftp != null && sftp.isConnected() && session != null && session.isConnected();
   }
 
   @Override
-  public void disconnect() throws FTPClientException {
+  public final void disconnect() throws FTPClientException {
 
     if (sftp != null) {
       sftp.disconnect();
@@ -104,7 +104,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void upload(String srcFile, String dstFile, MODE mode) throws FTPClientException {
+  public final void upload(final String srcFile, final String dstFile, final MODE mode) throws FTPClientException {
     try {
       sftp.put(srcFile, dstFile, null, getMode(mode));
     } catch (SftpException e) {
@@ -113,7 +113,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void upload(InputStream srcStream, String dstFile, MODE mode) throws FTPClientException {
+  public final void upload(final InputStream srcStream, final String dstFile, final MODE mode) throws FTPClientException {
     try {
       sftp.put(srcStream, dstFile, null, getMode(mode));
     } catch (SftpException e) {
@@ -122,7 +122,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void download(String srcFile, String dstFile, MODE mode) throws FTPClientException {
+  public final void download(final String srcFile, final String dstFile, final MODE mode) throws FTPClientException {
     try {
       sftp.get(srcFile, dstFile, null, getMode(mode));
     } catch (SftpException e) {
@@ -131,7 +131,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void download(String srcFile, OutputStream dstStream, MODE mode) throws FTPClientException {
+  public final void download(final String srcFile, final OutputStream dstStream, final MODE mode) throws FTPClientException {
     try {
       sftp.get(srcFile, dstStream, null, getMode(mode), 0);
     } catch (SftpException e) {
@@ -140,7 +140,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void deleteFile(String file) throws FTPClientException {
+  public final void deleteFile(final String file) throws FTPClientException {
     try {
       sftp.rm(file);
     } catch (SftpException e) {
@@ -153,7 +153,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void deleteDirectory(String directory) throws FTPClientException {
+  public final void deleteDirectory(final String directory) throws FTPClientException {
     try {
       sftp.rm(directory);
     } catch (SftpException e) {
@@ -162,7 +162,7 @@ public class SFTPClient extends AbstractFTPClient {
   }
 
   @Override
-  public void createDirectory(String directory) throws FTPClientException {
+  public final void createDirectory(final String directory) throws FTPClientException {
     try {
       sftp.mkdir(directory);
     } catch (SftpException e) {
@@ -170,7 +170,7 @@ public class SFTPClient extends AbstractFTPClient {
     }
   }
 
-  private int getMode(MODE mode) {
+  private int getMode(final MODE mode) {
 
     switch (mode) {
 

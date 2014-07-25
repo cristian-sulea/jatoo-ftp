@@ -30,42 +30,42 @@ public class FTPClientConnectionInfo {
   private String username;
   private String password;
 
-  public FTPClientConnectionInfo(String host, int port, String username, String password) {
+  public FTPClientConnectionInfo(final String host, final int port, final String username, final String password) {
     this.host = host;
     this.port = port;
     this.username = username;
     this.password = password;
   }
 
-  public String getHost() {
+  public final String getHost() {
     return host;
   }
 
-  public void setHost(String host) {
+  public final void setHost(final String host) {
     this.host = host;
   }
 
-  public int getPort() {
+  public final int getPort() {
     return port;
   }
 
-  public void setPort(int port) {
+  public final void setPort(final int port) {
     this.port = port;
   }
 
-  public String getUsername() {
+  public final String getUsername() {
     return username;
   }
 
-  public void setUsername(String username) {
+  public final void setUsername(final String username) {
     this.username = username;
   }
 
-  public String getPassword() {
+  public final String getPassword() {
     return password;
   }
 
-  public void setPassword(String password) {
+  public final void setPassword(final String password) {
     this.password = password;
   }
 

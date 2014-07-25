@@ -30,19 +30,19 @@ public class FTPClientException extends Exception {
     super();
   }
 
-  public FTPClientException(String message) {
+  public FTPClientException(final String message) {
     super(message);
   }
 
-  public FTPClientException(Throwable cause) {
+  public FTPClientException(final Throwable cause) {
     super(cause);
   }
 
-  public FTPClientException(String message, Throwable cause) {
+  public FTPClientException(final String message, final Throwable cause) {
     super(message, cause);
   }
 
-  public FTPClientException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+  public FTPClientException(final String message, final Throwable cause, final boolean enableSuppression, final boolean writableStackTrace) {
     super(message, cause, enableSuppression, writableStackTrace);
   }
 

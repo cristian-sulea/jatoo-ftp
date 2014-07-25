@@ -29,12 +29,12 @@ public class FTPClientConnectionInfoProviderConstructor implements FTPClientConn
 
   private final FTPClientConnectionInfo connectionInfo;
 
-  public FTPClientConnectionInfoProviderConstructor(String host, int port, String username, String password) {
+  public FTPClientConnectionInfoProviderConstructor(final String host, final int port, final String username, final String password) {
     this.connectionInfo = new FTPClientConnectionInfo(host, port, username, password);
   }
 
   @Override
-  public FTPClientConnectionInfo getConnectionInfo() {
+  public final FTPClientConnectionInfo getConnectionInfo() {
     return connectionInfo;
   }
 

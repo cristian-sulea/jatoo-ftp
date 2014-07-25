@@ -28,7 +28,7 @@ import jatoo.ftp.FTPClientException;
 @SuppressWarnings("serial")
 public class SFTPClientExceptionBadConnectionInfo extends FTPClientException {
 
-  public SFTPClientExceptionBadConnectionInfo(Throwable cause) {
+  public SFTPClientExceptionBadConnectionInfo(final Throwable cause) {
     super(cause);
   }
 

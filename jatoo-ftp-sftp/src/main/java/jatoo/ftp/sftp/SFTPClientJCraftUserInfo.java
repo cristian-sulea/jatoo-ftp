@@ -36,43 +36,43 @@ public class SFTPClientJCraftUserInfo implements UserInfo {
   /** The password. */
   private String password;
 
-  public SFTPClientJCraftUserInfo(String password) {
+  public SFTPClientJCraftUserInfo(final String password) {
     this.password = password;
   }
 
   @Override
-  public boolean promptPassword(String message) {
+  public final boolean promptPassword(final String message) {
     logger.info(message);
     logger.info("No need to prompt for password, the password was passed through constructor.");
     return true;
   }
 
   @Override
-  public String getPassword() {
+  public final String getPassword() {
     return password;
   }
 
   @Override
-  public boolean promptYesNo(String message) {
+  public final boolean promptYesNo(final String message) {
     logger.info(message);
     logger.info("Auto accepting the fingerprint, because I was told to do so.");
     return true;
   }
 
   @Override
-  public void showMessage(String message) {
+  public final void showMessage(final String message) {
     logger.info(message);
   }
 
   @Override
-  public boolean promptPassphrase(String message) {
+  public final boolean promptPassphrase(final String message) {
     logger.info(message);
     logger.info("No need to prompt for passphrase, the method #getPassphrase() will always return null.");
     return true;
   }
 
   @Override
-  public String getPassphrase() {
+  public final String getPassphrase() {
     return null;
   }
 
