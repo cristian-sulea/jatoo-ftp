@@ -15,19 +15,35 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package jatoo.sftp;
+package jatoo.ftp;
 
 /**
- * Bad connection info.
+ * {@link FTPClient} general exception.
  * 
- * @author Cristian Sulea ( http://cristian.sulea.net )
- * @version 1.0, November 7, 2013
+ * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
+ * @version 1.1, July 25, 2014
  */
 @SuppressWarnings("serial")
-public class SftpClientExceptionBadConnectionInfo extends SftpClientException {
+public class FTPClientException extends Exception {
 
-	public SftpClientExceptionBadConnectionInfo(Throwable cause) {
-		super(cause);
-	}
+  public FTPClientException() {
+    super();
+  }
+
+  public FTPClientException(String message) {
+    super(message);
+  }
+
+  public FTPClientException(Throwable cause) {
+    super(cause);
+  }
+
+  public FTPClientException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public FTPClientException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
+  }
 
 }

@@ -15,27 +15,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package jatoo.sftp;
+package jatoo.ftp;
 
 /**
- * Basic implementation for {@link SftpClientConnectionInfoProvider}. All the
- * info needed to create the {@link SftpClientConnectionInfo} object is received
+ * Basic implementation for {@link FTPClientConnectionInfoProvider}. All the
+ * info needed to create the {@link FTPClientConnectionInfo} object is received
  * through the constructor.
  * 
- * @author Cristian Sulea ( http://cristian.sulea.net )
- * @version 1.0, November 6, 2013
+ * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
+ * @version 1.1, July 25, 2014
  */
-public class SftpClientConnectionInfoProviderConstructor implements SftpClientConnectionInfoProvider {
+public class FTPClientConnectionInfoProviderConstructor implements FTPClientConnectionInfoProvider {
 
-	private SftpClientConnectionInfo connectionInfo;
+  private final FTPClientConnectionInfo connectionInfo;
 
-	public SftpClientConnectionInfoProviderConstructor(String host, int port, String username, String password) {
-		this.connectionInfo = new SftpClientConnectionInfo(host, port, username, password);
-	}
+  public FTPClientConnectionInfoProviderConstructor(String host, int port, String username, String password) {
+    this.connectionInfo = new FTPClientConnectionInfo(host, port, username, password);
+  }
 
-	@Override
-	public SftpClientConnectionInfo getConnectionInfo() {
-		return connectionInfo;
-	}
+  @Override
+  public FTPClientConnectionInfo getConnectionInfo() {
+    return connectionInfo;
+  }
 
 }

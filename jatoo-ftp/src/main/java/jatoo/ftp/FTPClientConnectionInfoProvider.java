@@ -15,35 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package jatoo.sftp;
+package jatoo.ftp;
 
 /**
- * SFTP client general exception
+ * {@link FTPClientConnectionInfo} provider.
  * 
- * @author Cristian Sulea ( http://cristian.sulea.net )
- * @version 1.0, November 6, 2013
+ * @author <a href="http://cristian.sulea.net" rel="author">Cristian Sulea</a>
+ * @version 1.1, July 25, 2014
  */
-@SuppressWarnings("serial")
-public class SftpClientException extends Exception {
+public interface FTPClientConnectionInfoProvider {
 
-	public SftpClientException() {
-		super();
-	}
-
-	public SftpClientException(String message) {
-		super(message);
-	}
-
-	public SftpClientException(Throwable cause) {
-		super(cause);
-	}
-
-	public SftpClientException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public SftpClientException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
+  FTPClientConnectionInfo getConnectionInfo();
 
 }
